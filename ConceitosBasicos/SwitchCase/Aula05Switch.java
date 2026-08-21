@@ -1,4 +1,4 @@
-package aula05;
+package SwitchCase;
 
 public class Aula05Switch {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package aula06;
+package LacosRepeticao;
 
 public class exercicio2 {
     public static void main(String[] args) {

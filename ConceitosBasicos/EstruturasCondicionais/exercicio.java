@@ -1,4 +1,4 @@
-package aula04;
+package EstruturasCondicionais;
 
 public class exercicio {
     public static void main(String[] args) {

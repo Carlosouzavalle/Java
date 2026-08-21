@@ -1,4 +1,4 @@
-package aula02;
+package TiposPrimitivos;
 
 public class Exercicios {
     public static void main(String[] args) {

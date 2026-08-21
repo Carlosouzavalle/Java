@@ -1,4 +1,4 @@
-package aula06;
+package LacosRepeticao;
 
 public class aula06lacosrepeticao {
     // while, do while, for
