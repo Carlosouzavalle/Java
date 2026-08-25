@@ -10,7 +10,8 @@ public class aula1 {
         System.out.println("Meu nome é " + nome + " e minha idade é " + idade);
         System.out.println(nome.getClass().getSimpleName());
         System.out.println(((Object)idade).getClass().getSimpleName());
-        System.out.println(((Object)altura).getClass().getSimpleName());
+        System.out.println(((Object)altura).getClass().getSimpleName()); 
+    
     }
 }
 
