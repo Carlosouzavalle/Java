@@ -9,10 +9,12 @@ public class desafio7 {
         Scanner scanner = new Scanner(System.in);
 
         // type the first number
-        System.out.println("type the first number: ");
+        System.out.println("type the first number:");
         int firstNumber = scanner.nextInt();
-        System.out.println("type the second number: ");
+
+        System.out.println("type the secondNumber");
         int secondNumber = scanner.nextInt();
+        
         scanner.nextLine();
         System.out.println("type 'par' or 'impar': ");
         String choice = scanner.nextLine().trim();
