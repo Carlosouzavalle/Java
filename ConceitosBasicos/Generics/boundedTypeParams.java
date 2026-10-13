@@ -1,6 +1,6 @@
 package Generics;
 
-import keywords.finall.finall;
+// import keywords.finall.finall;
 
 public class boundedTypeParams<T extends Comparable<T>> {
     private final T value;

@@ -1,5 +1,3 @@
-package Arrrays;
-
 import java.util.Arrays;
 
 public class Arrayas {

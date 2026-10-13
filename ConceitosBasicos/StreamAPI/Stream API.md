@@ -40,5 +40,3 @@ B. Operações Terminais (*Terminal Operations*)
 **Mecanismo de Divisão**: Para dividir a fonte de dados em partes que possam ser executadas concorrentemente por múltiplas threads, o Java utiliza internamente a interface **Spliterator**[16].
 
 **Atenção ao Desempenho**: Operações intermediárias com estado (como `sorted()` ou `distinct()`) criam barreiras de sincronização que exigem o armazenamento temporário em buffer, o que pode aumentar o custo computacional em Streams paralelas[9].
-
-

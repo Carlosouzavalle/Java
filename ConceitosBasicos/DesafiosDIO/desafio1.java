@@ -17,6 +17,9 @@ public class desafio1 {
         int resultYear = actualYear - birthYear;
         System.out.println("Olá " + name + " você tem " + resultYear + " anos de idade");
 
+
+        scanner.close();
+
     }
 
 }
