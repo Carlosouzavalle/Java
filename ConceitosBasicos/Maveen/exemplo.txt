@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" 
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    
+    <!-- 1. Versão do modelo do POM -->
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- 2. Projeto Pai (Parent): Herda versões e compatibilidade de dependências -->
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.4.0</version>
+        <relativePath/> <!-- Busca do repositório central -->
+    </parent>
+
+    <!-- 3. Identificação do Projeto (Coordenadas GAV) -->
+    <groupId>com.exemplo</groupId>
+    <artifactId>api-java-exemplo</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>API Java Exemplo</name>
+    <description>Projeto de exemplo demonstrando a estrutura do pom.xml</description>
+
+    <!-- 4. Propriedades Globais -->
+    <properties>
+        <java.version>17</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+
+    <!-- 5. Dependências Externas do Projeto -->
+    <dependencies>
+        <!-- Dependência para desenvolvimento de APIs REST e Web -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+
+        <!-- Biblioteca Lombok para reduzir boilerplate (getters, setters) -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+
+        <!-- Dependência para testes automatizados com JUnit -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- 6. Configuração de Build e Plugins -->
+    <build>
+        <plugins>
+            <!-- Plugin para empacotamento e execução da aplicação Spring Boot -->
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
+
+
+
+### Entendendo as Estruturas do Arquivo:
+
+    <parent>: Permite herdar configurações e gerenciar as versões compatíveis de todas as bibliotecas da stack.
+
+    groupId, artifactId e version: Formam as coordenadas do projeto. A combinação de artifactId e version dá nome ao arquivo executável .jar gerado na pasta target/ após a compilação.
+
+    <properties>: Armazena variáveis de configuração reusáveis no arquivo, como a versão do Java e o encoding (UTF-8).
+    
+    <dependencies>: Bloco onde são declaradas todas as bibliotecas de terceiros necessárias.
+    <build> e <plugins>: Especificam as ferramentas responsáveis por compilar o código e gerar o artefato executável.
+
