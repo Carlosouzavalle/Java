@@ -1,11 +1,14 @@
 package com.example.demo.Missoes;
 
+import java.util.List;
+
 import com.example.demo.Ninjas.NinjaModel;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 
 @Entity
@@ -17,6 +20,11 @@ public class MissoesModel {
     private Long id;
     private String nomeDaMissao;
     private String dificuldadeMissao;
-    private NinjaModel ninja;
+    // private NinjaModel ninja;
+    
+    // uma missão pode ter varios ninjas
+    @OneToMany (mappedBy = "missoes")
+    
+    private List<NinjaModel> ninjas;
 
 }

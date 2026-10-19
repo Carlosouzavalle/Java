@@ -13,8 +13,4 @@ public class NinjaController {
     public String boasVindas() {
         return "Bem-vindo a pagina!";
     }
-
-
-
-
 }
