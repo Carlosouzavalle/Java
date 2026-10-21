@@ -9,6 +9,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 // Entity ele transforma a classe em uma entidade do DB
@@ -17,6 +18,8 @@ import lombok.NoArgsConstructor;
 @Table(name = "tb_cadastro")
 @NoArgsConstructor
 @Data // ele cria os getters e setters automaticamente
+// Ver MissoesModel: comparar apenas pelo id quebra a recursão infinita entre as entidades.
+@EqualsAndHashCode(of = "id")
 public class NinjaModel {
     
     @Id 
