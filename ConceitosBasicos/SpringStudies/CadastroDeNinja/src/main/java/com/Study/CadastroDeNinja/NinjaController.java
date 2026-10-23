@@ -3,10 +3,19 @@ package com.Study.CadastroDeNinja;
 // import para nossa list
 import java.util.List;
 
+// esse import vai nos ajudar a verificar o status code
+import org.springframework.http.HttpStatus;
+
 // imports do spring boot
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.server.ResponseStatusException;
+
+// validação
+import jakarta.validation.Valid;
 
 @RestController
 public class NinjaController {
@@ -45,14 +54,20 @@ public class NinjaController {
         Ninja ninja = ninjaService.buscarPorNome(nome);
 
         if (ninja == null) {
-            throw new RuntimeException("Ninja não encontrado");
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ninja não encontrado");
         }
 
         return ninja;
     }
+
+    @PostMapping("/ninjas")
+    public Ninja cadastrarNinja(@Valid  @RequestBody Ninja ninja) {
+        return ninjaService.cadastrarNinja(ninja);
+    }
 }
 
-// Action:
 
+
+// Action:
 // Consider defining a bean of type 'com.Study.CadastroDeNinja.NinjaService' in
 // your configuration.

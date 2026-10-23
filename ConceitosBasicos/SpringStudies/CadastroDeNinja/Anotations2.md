@@ -27,3 +27,22 @@ Pq funciona dessa forma?
 ? inicia os parâmetros da consulta.
 nome=Naruto envia um parâmetro chamado nome com o valor Naruto.
 @RequestParam String nome recebe esse valor no método Java.
+
+HttpStatus.NOT_FOUND	Informa que o recurso não foi encontrado (404)
+ResponseStatusException	Comunica ao Spring qual resposta HTTP deve ser enviada
+
+@RequestBody. Ela informa ao Spring que os dados do objeto serão recebidos no corpo da requisição.
+
+
+@NotBlank: impede que o texto seja vazio ou composto apenas por espaços.
+@Min(1): exige que a idade seja pelo menos 1.
+message: define a mensagem associada à validação.
+
+
+O @Valid pede ao Spring para validar o objeto recebido antes de executar o método.
+Por exemplo, se você enviar um JSON com o nome vazio ou idade zero, a validação deverá rejeitar a requisição, normalmente com HTTP 400.
+
+
+Ninja cadastrado corretamente	HTTP 200
+Dados inválidos	HTTP 400
+Nome duplicado	HTTP 409 — Conflict

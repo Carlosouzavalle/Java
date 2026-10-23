@@ -3,7 +3,9 @@ package com.Study.CadastroDeNinja;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.web.server.ResponseStatusException;
 
 @Service 
 public class NinjaService {
@@ -29,5 +31,19 @@ public class NinjaService {
         return null;
     }
 
+
+    public Ninja cadastrarNinja(Ninja ninja) {
+        for(Ninja existenteNinja : ninjas) {
+            if (existenteNinja.getNome().equalsIgnoreCase(ninja.getNome())) {
+                throw new ResponseStatusException(
+                    HttpStatus.CONFLICT,
+                    "Já existe um ninja com esse nome"
+                );
+            }
+        }
+        
+        ninjas.add(ninja);
+        return ninja;
+    }
 
 }
