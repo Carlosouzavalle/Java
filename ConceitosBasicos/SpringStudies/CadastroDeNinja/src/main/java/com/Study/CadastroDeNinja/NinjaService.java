@@ -27,7 +27,6 @@ public class NinjaService {
                 return n;
             }
         }
-
         return null;
     }
 
