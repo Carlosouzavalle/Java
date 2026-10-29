@@ -10,7 +10,9 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.server.ResponseStatusException;
 
@@ -18,18 +20,9 @@ import org.springframework.web.server.ResponseStatusException;
 import jakarta.validation.Valid;
 
 @RestController
+@RequestMapping("/ninjas")
 public class NinjaController {
 
-    // antigo
-    // passar a lista como atributo da classe evita vc ter que repassar a lista
-    // dentro
-    // do outro medoto
-    // Aqui, final impede que o atributo ninjas passe a apontar para outra lista,
-    // mas não impede que adicionemos ou removamos elementos da lista atual.
-
-    // novo
-    // a lista foi passada em um arquivo separado e só estamos usando ele aqui com
-    // os dados que temos lá
     private final NinjaService ninjaService;
 
     // O Spring cria o NinjaService e o fornece ao controller pelo construtor. Esse
@@ -42,26 +35,17 @@ public class NinjaController {
 
     // Como a gente cria uma rota?
     // é seguindo essa logica aqui
-    @GetMapping("/ninjas")
-    public List<Ninja> mostrarNinjas() {
+    @GetMapping
+    public List<Ninja> listarNinjas() {
         return ninjaService.listarNinjas();
         // A diferença principal é o tipo de retorno: String representa texto, enquanto
         // Ninja representa um objeto da nossa classe.
     }
 
-    @GetMapping("/ninjas/buscar")
-    public Ninja buscarNinja(@RequestParam String nome) {
-        Ninja ninja = ninjaService.buscarPorNome(nome);
-
-        if (ninja == null) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Ninja não encontrado");
-        }
-
-        return ninja;
-    }
-
-    @PostMapping("/ninjas")
-    public Ninja cadastrarNinja(@Valid  @RequestBody Ninja ninja) {
+    @PostMapping
+    @ResponseStatus(HttpStatus.CREATED)
+    public Ninja cadastrarNinja(@Valid @RequestBody Ninja ninja)
+    {
         return ninjaService.cadastrarNinja(ninja);
     }
 }

@@ -50,8 +50,17 @@ public class Ninja {
         return rank;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public void setIdade(int idade) {
+        this.idade = idade;
+    }
 
+    public void setRank(String rank) {
+        this.rank = rank;
+    }
 }
 
 
