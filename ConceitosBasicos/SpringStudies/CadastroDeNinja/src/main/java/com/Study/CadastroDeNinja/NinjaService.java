@@ -7,14 +7,16 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
-import jakarta.persistence.Id;
 
 @Service 
 public class NinjaService {
 
 //    private final List<Ninja> ninjas = new ArrayList<>();
 
+
+
     private final NinjaRepository ninjaRepository;
+
 
     public NinjaService(NinjaRepository ninjaRepository) {
         //ninjas.add(new Ninja("Naruto", 17, "Genin"));
@@ -22,6 +24,7 @@ public class NinjaService {
         this.ninjaRepository = ninjaRepository;
     }
 
+    // fica responsavel pelo get por id
     public Ninja listarNinjas(Long id) {
          return ninjaRepository.findById(id)
             .orElseThrow(() -> new ResponseStatusException(
@@ -35,6 +38,7 @@ public class NinjaService {
     }
 
 
+    // fica responsavel pelo post
     public Ninja cadastrarNinja(Ninja ninja) {
         boolean nameExist = ninjaRepository.findAll()
             .stream()

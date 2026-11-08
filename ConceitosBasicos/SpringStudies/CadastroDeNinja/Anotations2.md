@@ -1,6 +1,8 @@
 Partindo do absoluto zero
 
 
+No Java (especialmente em contextos de persistência de dados e frameworks como JPA e Hibernate), uma entidade é uma classe Java simples (um POJO) que representa uma tabela do banco de dados relacional e um conceito do mundo real
+
 // Como a gente cria uma rota?
 // é seguindo essa logica aqui
 
@@ -46,3 +48,12 @@ Por exemplo, se você enviar um JSON com o nome vazio ou idade zero, a validaç�
 Ninja cadastrado corretamente	HTTP 200
 Dados inválidos	HTTP 400
 Nome duplicado	HTTP 409 — Conflict
+
+
+O método findAll() no Java (geralmente usado no Spring Data JPA) é responsável por buscar e retornar todos os registros de uma determinada tabela do banco de dados.
+
+O Stream em Java (introduzido no Java 8 através da Stream API) é uma abstração que permite manipular sequências de dados (como listas e arrays) de forma declarativa e funcional
+
+
+O orElseThrow() é um método usado para lidar com objetos do tipo Optional no Java.
+A função dele é muito simples: "Se o valor estiver presente, me dê o valor. Se estiver vazio, lance uma exceção."

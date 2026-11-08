@@ -20,6 +20,7 @@ import org.springframework.web.server.ResponseStatusException;
 import jakarta.validation.Valid;
 
 @RestController
+
 @RequestMapping("/ninjas")
 public class NinjaController {
 
@@ -49,7 +50,6 @@ public class NinjaController {
         return ninjaService.cadastrarNinja(ninja);
     }
 }
-
 
 
 // Action:
